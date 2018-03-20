@@ -3,33 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>travieso.me/blog/first/</loc>
+    <loc>/blog/first/</loc>
     <lastmod>2018-03-20T23:33:51+03:00</lastmod>
   </url>
   
   <url>
-    <loc>travieso.me/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2018-03-20T23:33:47+03:00</lastmod>
   </url>
   
   <url>
-    <loc>travieso.me/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2018-03-20T23:33:51+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>travieso.me/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>travieso.me/tags/</loc>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>travieso.me/</loc>
+    <loc>/</loc>
     <lastmod>2018-03-20T23:33:51+03:00</lastmod>
     <priority>0</priority>
   </url>
