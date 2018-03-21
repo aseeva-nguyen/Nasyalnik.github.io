@@ -13,6 +13,26 @@
   </url>
   
   <url>
+    <loc>/talks/selenium-grid-on-demand/</loc>
+    <lastmod>2017-05-26T01:52:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talks/rubber-cluster/</loc>
+    <lastmod>2017-04-16T01:51:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talks/devops-guide/</loc>
+    <lastmod>2016-11-12T01:48:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talks/testing-in-devops/</loc>
+    <lastmod>2016-10-01T01:51:46+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2018-03-20T23:33:51+03:00</lastmod>
     <priority>0</priority>
@@ -25,6 +45,12 @@
   
   <url>
     <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/talks/</loc>
+    <lastmod>2017-05-26T01:52:17+03:00</lastmod>
     <priority>0</priority>
   </url>
   

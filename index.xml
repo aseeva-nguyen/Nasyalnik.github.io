@@ -21,12 +21,51 @@
     </item>
     
     <item>
-      <title>About</title>
+      <title>Обо мне</title>
       <link>/about/</link>
       <pubDate>Tue, 20 Mar 2018 23:33:47 +0300</pubDate>
       
       <guid>/about/</guid>
-      <description></description>
+      <description>Ведущий технический эксперт в автоматизации тестирования и тренер по инженерным практикам в Альфа-Банке.
+В QA-отрасли с 2012 года. Прошла все роли, начиная от manual QA до QA Lead.
+В ИТ с 2007 года. Успела поработать в разных областях, побывала даже программистом 1С и сис. админом. Без ума от консоли Linux :)
+За 4 года приняла участие в тестировании более двух десятков проектов. Участвовала в разработке двух фреймворков для автоматизации тестирования. Также занималась внедрением гибридной облачной инфраструктуры в Банке.</description>
+    </item>
+    
+    <item>
+      <title>Selenium grid on-demand</title>
+      <link>/talks/selenium-grid-on-demand/</link>
+      <pubDate>Fri, 26 May 2017 01:52:17 +0300</pubDate>
+      
+      <guid>/talks/selenium-grid-on-demand/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>Rubber cluster for dynamic selenium grid</title>
+      <link>/talks/rubber-cluster/</link>
+      <pubDate>Sun, 16 Apr 2017 01:51:00 +0300</pubDate>
+      
+      <guid>/talks/rubber-cluster/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>DevOps guide for awesome QA</title>
+      <link>/talks/devops-guide/</link>
+      <pubDate>Sat, 12 Nov 2016 01:48:35 +0300</pubDate>
+      
+      <guid>/talks/devops-guide/</guid>
+      <description>      </description>
+    </item>
+    
+    <item>
+      <title>Роль тестирования в Devops</title>
+      <link>/talks/testing-in-devops/</link>
+      <pubDate>Sat, 01 Oct 2016 01:51:46 +0300</pubDate>
+      
+      <guid>/talks/testing-in-devops/</guid>
+      <description>   </description>
     </item>
     
   </channel>
