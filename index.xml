@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Блог Анастасии</title>
-    <link>/</link>
-    <description>Recent content on Блог Анастасии</description>
+    <title>Блог отчаянной QA домохозяйки</title>
+    <link>https://travieso.me/</link>
+    <description>Recent content on Блог отчаянной QA домохозяйки</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Tue, 20 Mar 2018 23:33:51 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 20 Mar 2018 23:33:47 +0300</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://travieso.me/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>First</title>
-      <link>/blog/first/</link>
-      <pubDate>Tue, 20 Mar 2018 23:33:51 +0300</pubDate>
-      
-      <guid>/blog/first/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Обо мне</title>
-      <link>/about/</link>
+      <link>https://travieso.me/about/</link>
       <pubDate>Tue, 20 Mar 2018 23:33:47 +0300</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://travieso.me/about/</guid>
       <description>Ведущий технический эксперт в автоматизации тестирования и тренер по инженерным практикам в Альфа-Банке.
 В QA-отрасли с 2012 года. Прошла все роли, начиная от manual QA до QA Lead.
 В ИТ с 2007 года. Успела поработать в разных областях, побывала даже программистом 1С и сис. админом. Без ума от консоли Linux :)
@@ -34,37 +25,37 @@
     
     <item>
       <title>Selenium grid on-demand</title>
-      <link>/talks/selenium-grid-on-demand/</link>
+      <link>https://travieso.me/talks/selenium-grid-on-demand/</link>
       <pubDate>Fri, 26 May 2017 01:52:17 +0300</pubDate>
       
-      <guid>/talks/selenium-grid-on-demand/</guid>
+      <guid>https://travieso.me/talks/selenium-grid-on-demand/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Rubber cluster for dynamic selenium grid</title>
-      <link>/talks/rubber-cluster/</link>
+      <link>https://travieso.me/talks/rubber-cluster/</link>
       <pubDate>Sun, 16 Apr 2017 01:51:00 +0300</pubDate>
       
-      <guid>/talks/rubber-cluster/</guid>
+      <guid>https://travieso.me/talks/rubber-cluster/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>DevOps guide for awesome QA</title>
-      <link>/talks/devops-guide/</link>
+      <link>https://travieso.me/talks/devops-guide/</link>
       <pubDate>Sat, 12 Nov 2016 01:48:35 +0300</pubDate>
       
-      <guid>/talks/devops-guide/</guid>
+      <guid>https://travieso.me/talks/devops-guide/</guid>
       <description>      </description>
     </item>
     
     <item>
       <title>Роль тестирования в Devops</title>
-      <link>/talks/testing-in-devops/</link>
+      <link>https://travieso.me/talks/testing-in-devops/</link>
       <pubDate>Sat, 01 Oct 2016 01:51:46 +0300</pubDate>
       
-      <guid>/talks/testing-in-devops/</guid>
+      <guid>https://travieso.me/talks/testing-in-devops/</guid>
       <description>   </description>
     </item>
     

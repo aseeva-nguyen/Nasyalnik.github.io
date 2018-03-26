@@ -3,60 +3,54 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/first/</loc>
-    <lastmod>2018-03-20T23:33:51+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
+    <loc>https://travieso.me/about/</loc>
     <lastmod>2018-03-20T23:33:47+03:00</lastmod>
   </url>
   
   <url>
-    <loc>/talks/selenium-grid-on-demand/</loc>
+    <loc>https://travieso.me/talks/selenium-grid-on-demand/</loc>
     <lastmod>2017-05-26T01:52:17+03:00</lastmod>
   </url>
   
   <url>
-    <loc>/talks/rubber-cluster/</loc>
+    <loc>https://travieso.me/talks/rubber-cluster/</loc>
     <lastmod>2017-04-16T01:51:00+03:00</lastmod>
   </url>
   
   <url>
-    <loc>/talks/devops-guide/</loc>
+    <loc>https://travieso.me/talks/devops-guide/</loc>
     <lastmod>2016-11-12T01:48:35+03:00</lastmod>
   </url>
   
   <url>
-    <loc>/talks/testing-in-devops/</loc>
+    <loc>https://travieso.me/talks/testing-in-devops/</loc>
     <lastmod>2016-10-01T01:51:46+03:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/</loc>
-    <lastmod>2018-03-20T23:33:51+03:00</lastmod>
+    <loc>https://travieso.me/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://travieso.me/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://travieso.me/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/talks/</loc>
+    <loc>https://travieso.me/talks/</loc>
     <lastmod>2017-05-26T01:52:17+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2018-03-20T23:33:51+03:00</lastmod>
+    <loc>https://travieso.me/</loc>
+    <lastmod>2018-03-20T23:33:47+03:00</lastmod>
     <priority>0</priority>
   </url>
   
