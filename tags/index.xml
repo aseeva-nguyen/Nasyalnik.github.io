@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Блог отчаянной QA домохозяйки</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-Ru</language>
-    <lastBuildDate>Sat, 01 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://travieso.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Agiledays2018</title>
+      <link>https://travieso.me/tags/agiledays2018/</link>
+      <pubDate>Thu, 22 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/tags/agiledays2018/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Qafest2016</title>

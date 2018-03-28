@@ -1,0 +1,862 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="ru-Ru">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.37.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Вам не нужны разработчики автотестов!</title>
+    <meta name="author" content="Асеева-Нгуен Анастасия">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://travieso.me/favicon.png">
+    
+
+    
+    <meta name="description" content="В эпоху вселенского внедрения agile-методологий и devops-a уже никто не сомневается в том, что регрессия должна быть автоматизирована. Особенно, если в компании идет речь о Continuous Delivery. И тут все кидаются и начинают хантить разработчиков автотестов. Рынок становится перегретым.
+">
+    <meta property="og:description" content="В эпоху вселенского внедрения agile-методологий и devops-a уже никто не сомневается в том, что регрессия должна быть автоматизирована. Особенно, если в компании идет речь о Continuous Delivery. И тут все кидаются и начинают хантить разработчиков автотестов. Рынок становится перегретым.
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Вам не нужны разработчики автотестов!">
+    <meta property="og:url" content="/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+    <meta property="og:site_name" content="Блог отчаянной QA домохозяйки">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Блог отчаянной QA домохозяйки">
+    <meta name="twitter:description" content="В эпоху вселенского внедрения agile-методологий и devops-a уже никто не сомневается в том, что регрессия должна быть автоматизирована. Особенно, если в компании идет речь о Continuous Delivery. И тут все кидаются и начинают хантить разработчиков автотестов. Рынок становится перегретым.
+">
+    
+      <meta name="twitter:creator" content="@Travieso_nastya">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg">
+    
+
+    
+      <meta property="og:image" content="//habrastorage.org/webt/qx/hl/lp/qxhllpilrrqill9hvmf4mhexpge.png">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://travieso.me/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-116205401-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://travieso.me/">Блог отчаянной QA домохозяйки</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://travieso.me/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://travieso.me/#about">
+          <img class="sidebar-profile-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+        </a>
+        <h4 class="sidebar-profile-name">Асеева-Нгуен Анастасия</h4>
+        
+          <h5 class="sidebar-profile-bio">Эксперт в автоматизации тестирования и тренер по инженерным практикам. Моя миссия - распространение культуры качества и DevOps.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Главная</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Разделы</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Метки</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Архив</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Об авторе</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Nasyalnik" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Вам не нужны разработчики автотестов!
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-03-22T00:00:00Z">
+        
+  Март 22, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>в</span>
+    
+      <a class="category-link" href="https://travieso.me/categories/article">article</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>В эпоху вселенского внедрения agile-методологий и devops-a уже никто не сомневается в том, что регрессия должна быть автоматизирована. Особенно, если в компании идет речь о Continuous Delivery. И тут все кидаются и начинают хантить разработчиков автотестов. Рынок становится перегретым.
+</p>
+
+<p>И сегодня я вам расскажу историю о том, что на самом деле разработчики автотестов не такая уж и важная роль в команде. Точнее они совсем не нужны, особенно если вы внедряете у себя scrum. И все эти ваши agile-ы и devops-ы можно внедрять и без этих людей. Так что, если кто-нибудь вам скажет, что у них в команде все тестируют руками, потому что у них нет разработчика автотестов по каким-либо причинам - не верьте им. Они тестируют руками, потому что по-другому им лень. Или не умеют.</p>
+
+<h1 id="проблема-отдельной-команды-разработчиков-автотестов">Проблема отдельной команды разработчиков автотестов</h1>
+
+<p>Как я уже говорила, в Альфе я занималась развитием автоматизации тестирования. И за два года мы смогли полностью отказаться от такой позиции, как разработчик автотестов. Сразу оговорюсь, речь идет о подразделениях, где делаются электронные продукты. А не про весь Альфа-Банк.
+Итак, начну рассказ. Когда я только пришла, орг. структура и процесс сильно напоминал вот эту, типичную для многих картину:</p>
+
+<p>Есть некий:</p>
+
+<ul>
+<li>отдел/команда разработки;</li>
+<li>отдел/команда тестирования;</li>
+<li>отдел/команда аналитиков;</li>
+</ul>
+
+<p>Все они одновременно могут/могли работать над разными продуктами. А если кто решил делать еще и автоматизацию тестирования, то тут появляется:</p>
+
+<ul>
+<li>отдел/команда автоматизации тестирования.</li>
+</ul>
+
+<p>И для управления всем этим добром как правило нужен Руководитель проектов. Вот я пришла тогда, когда эта команда автоматизаторов уже существовала.
+<img src="https://habrastorage.org/webt/gn/si/tk/gnsitkoupfytaavgfv23uhjbj24.jpeg" alt="Функциональные колоды, работающие над разными проектами/продуктами" /></p>
+
+<p>И наш процесс тестирования выглядел следующим образом:
+<img src="https://habrastorage.org/webt/e1/jw/-0/e1jw-0ajuisof5jb40f-irqat3y.jpeg" alt="Процесс тестирования" /></p>
+
+<p>И как правило, автоматизация тестирования достигается за счет совместного труда тестировщика и разработчика автотестов. Где один/одни придумывает тест-кейсы и тестирует приложение руками, а вторые – эти самые тест-кейсы автоматизирует. И их взаимодействие координируют РП и еще армия менеджеров. Всякие там Test manager и Test lead-ы.</p>
+
+<p>Я не буду рассказывать, “что не так с отделами”. С ними все не так. Хотя бы в том, что каждый отдел производит «артефакты-загадки», являющиеся частью будущей фичи/продукта, и тимлидам и PM-ам всегда нужно держать руку на пульсе в этом процессе.  Передавать артефакт-загадку другому отделу, следить, чтобы отделы коммуницировали друг с другом и т.д.</p>
+
+<p>Поэтому отдельно останавливаться на этом не будем.</p>
+
+<p>Перейдем сразу к более распространенной схеме рабочего процесса. Когда есть продуктовые команды и отдельная сервисная команда разработчиков автотестов.
+Проблема - Отдельная команда разработчиков автотестов
+Если же у вас agile, скажем так, скрам - как это было у нас, то проблемы остаются те же. Потому что спустя какое-то время стали появляться продуктовые команды, которые в большинстве своем работали по скраму. Обычно там присутствовал 1 тестировщик на команду. А разработчик автотестов все так же находится в отдельной команде автоматизаторов, которая все так же осталась сервисной командой для других продуктовых команд.</p>
+
+<p>В первом и во втором случае типичный набор деятельности разработчика автотестов был следующим:
+1. Определиться с тем, какие тест-кейсы необходимо автоматизировать.
+2. Определиться со стеком технологий. Кстати, при интеграции в команду  - этот вопрос отпадает, так как целью стоит переиспользование существующих технологий и не плодить зоопарк технологий.
+3. Разработка фреймворка, специфичного для продукта
+4. Подготовка окружения для прогона тестов
+5. Поспорить с тестировщиком о том, что написанные тесты - рабочие и им можно верить.</p>
+
+<p>Так какие же проблемы есть у этого подхода? Дело оказалось вот чем.</p>
+
+<p>Отсутствует быстрая ценность от автотестов. Как правило, они разрабатывались с задержкой в 1 и более спринт. Потому что была очередь на эти самые автотесты. И ценность от них команда получала только в виде автоматизированной регрессии. И очень часто бывало, что к тому моменту, когда автоматизируют фичу - команда ее уже переделает. И автотесты быстро становятся неактуальными.
+Никто не знает, чем они занимаются. Автоматизируют только один проект.
+И, как правило, это были купленные люди, и в этом случае SM или PO считали, что это «приходящие» люди. И они не должны быть частью команды.</p>
+
+<p>А теперь внимание, что делать РП/SM, у которого PO не заложил деньги на автоматизацию? Или продукт месяца 3 как разрабатывается, а разработчика автотестов под их продукт все никак найти не могут? Или в команде автотестеров нехватка рук, кто-то ушел в отпуск/заболел? Забыть про автоматизацию и да здравствует ручная регрессия по 2 недели? Или ждать, когда он вернется? И при этом нести финансовые потери от несвоевременного запуска продукта, или же наоборот, от того, что продукт выпустили в «забагованном» состоянии.</p>
+
+<p>Итак, очевидно, подход с выделенной командой автотестеров в среде, где есть agile - не применим, и надо искать другие способы перестройки процесса для достижения автоматизации тестирования.
+Для этого давайте рассмотрим формы сотрудничества и взаимодействия разработчиков автотестов с другими членами продуктовых команд.</p>
+
+<h2 id="как-тестировщики-сотрудничают-с-автоматизаторами">Как тестировщики сотрудничают с автоматизаторами</h2>
+
+<p>В данной структуре тестировщики являются заказчиками для разработчиков автотестов. По факту – команда автотестеров это сервисная команда для продуктовых команд. А у такой команды есть свой тимлид, который проксирует запросы от тестировщиков автотестерам. В худшем случае, у тестировщиков тоже есть свой тимлид, который проксирует запросы тестировщиков тимлиду разработчиков автотестов. И на деле у нас получается сломанный телефон, длинная петля обратной связи. И почти нулевая эффективность. Обычно при такой оргструктуре люди выступают на конференциях с темами про то, что автоматизация тестирования это долго и дорого, и что тестировать только «руками» не стыдно.
+И даже если с коммуникацией не все так плохо, можно поймать другие проблемы в стиле:
+разработчик(и) в конкретный момент времени заняты другими проектами и не могут  здесь и сейчас ответить на запросы тестировщика.</p>
+
+<h2 id="как-программисты-сотрудничают-с-автоматизаторами">Как программисты &ldquo;сотрудничают&rdquo; с автоматизаторами</h2>
+
+<p>Программисты также являются заказчиками команды автоматизации тестирования. Когда разработчик  создает какую-то либу для своих собственных целей, и он также может быть полезным для тестировщиков, в его же интересах передать данный инструмент команде автоматизации тестирования, чтобы они его внедрили для тестов.  Но при наличии отдельной команды, и особенно при наличии своего отдельного тимлида многие разработчики просто отказываются  ввязываться в коммуникационные дебаты и убеждать другого человека в необходимости использования разработанного ими инструмента. В результате мы имеем следующие проблемы:
+дублирование инструментов / фреймворков автоматизации из-за отсутствия коммуникации с разработчиками.
+часто решается одна и та же проблема разными инструментами. Например, для тестирования необходимо вытаскивать логи из Elasticsearch. У разработчиков уже, к примеру, есть своя написанная библиотека для этой задачи, но вместо того, чтобы переиспользовать и развивать существующий инструмент, автотестеры как правило пишут свое, либо ищут новый инструмент для этого. Потому что отсутствие коммуникаций внутри одной команды приводит к дублированию работы.
+автотестеры используют инструменты, которые по каким-то причинам разработчики могут потом отказываться  поддерживать или развивать. Например, у нас разработчики использовали maven в качестве сборщика проектов. И когда встала задача интеграции автоматизации тестирования в процесс разработки - пришлось отказаться от старого фреймворка совсем. Так как перевести его на gradle оказалось сложнее, чем написать новый. А использовать maven разработчики не могли, так как вся инфраструктура и окружение у нас уже было “заточено” под gradle.</p>
+
+<h2 id="как-менеджмент-сотрудничает-с-автоматизаторами">Как менеджмент &ldquo;сотрудничает&rdquo; с автоматизаторами</h2>
+
+<p>Менеджмент сотрудничает с разработчиками автоматизированных тестов, в основном, запрашивая и получая регулярные отчеты о выполнении работ, которые должны содержать ответы на стандартные вопросы, к примеру:</p>
+
+<ul>
+<li>Что мы получаем от автоматизации тестирования?</li>
+<li>Сколько она стоит продукту?</li>
+<li>Учитывая стоимость, достаточно ли мы выигрываем от автоматизации тестирования?</li>
+<li>Что плохого может произойти, если будет приостановлено финансирование автоматизации?</li>
+<li>Какова стоимость технической поддержки написанных автотестов?</li>
+</ul>
+
+<p>В итоге, вот основные фейлы автоматизации тестирования, когда ее делают выделенные разработчики для команды:</p>
+
+<ol>
+<li>Непрозрачность количества автоматизированного тестового покрытия</li>
+<li>Разрабатываем то, что не используется при тестировании продукта. Например, написали  или автоматизировали тест-кейсы, которые не включили в запуск регрессионного сьюита. (Zero Value)</li>
+<li>Не анализируем результаты тестирования: разработали &ndash;&gt; запустили &ndash;&gt; не проанализировали результаты. (Zero Value)</li>
+<li>Нестабильные тест-кейсы: постоянно тратим много денег на стабилизацию тест-кейсов</li>
+</ol>
+
+<h2 id="поиск-решения-проблемы">Поиск решения проблемы</h2>
+
+<h3 id="попытка-1-на-команду-выделен-1-тестировщик-и-1-разработчик-автотестов">Попытка #1: На команду выделен 1 тестировщик и 1 разработчик автотестов</h3>
+
+<p>История:
+<img src="https://habrastorage.org/webt/qx/hl/lp/qxhllpilrrqill9hvmf4mhexpge.png" alt="" /></p>
+
+<p>Проблемы:
+Что делать, если продукт/проект не генерирует такую нагрузку для двоих? Что делать, если разработчик автотестов отказывается заниматься функциональным тестированием, если вы оставляете его одного в команде? Или же если тестировщик не настолько компетентен, чтобы писать автотесты самостоятельно?</p>
+
+<h3 id="попытка-2-разработчик-автотестов-является-частью-2-3-команд">Попытка #2: Разработчик автотестов является частью  2-3 команд.</h3>
+
+<p>История:
+<img src="https://habrastorage.org/webt/ph/ic/n3/phicn3cxw7vg5sxbmj5acxgm0m0.png" alt="" /></p>
+
+<p>Проблемы:
+<img src="https://habrastorage.org/webt/z-/z_/xz/z-z_xztsfkv9gix35ha4v8v2dzm.png" alt="" /></p>
+
+<p>Когда мы объединяем все в кросс-функциональную команду - мы включаем в нее все эти зависимости и не нуждаемся в какой-либо координации. Уровень управления становится намного меньше.</p>
+
+<p>Почему вышеуказанные подходы не работают
+Наличие выделенной команды автотестеров - это не agile
+Наличие выделенных разработчиков автотестов - это дорого для продукта/команды
+Поиск/хантинг таких людей дорог и долог. И это тормозит развитие продукта
+Разработка автотестов значительно отстает от разработки продукта. В итоге мы получаем не максимальное велью от продукта.</p>
+
+<h3 id="попытка-3-или-успешная-попытка-научить-тестировщиков-писать-автотесты">Попытка #3 или Успешная попытка: Научить тестировщиков писать автотесты</h3>
+
+<p>Что для этого нужно?</p>
+
+<ol>
+<li>Выстроить правильную пирамиду тестирования</li>
+<li>“Размазать” процесс автоматизации тестирования по команде</li>
+<li>Использовать простые инструменты для автоматизации тестирования</li>
+<li>Создать инструмент для написания автотестов непрограммистами</li>
+<li>Научить тестировщиков чуть-чуть программировать</li>
+</ol>
+
+<p>Когда команда сама участвует в разработке автотестов - они сами отвечают за тестовое покрытие и понимают, какое количество тестов уже написано, и какое необходимо еще дописать, чтоб уменьшить время на ручную регрессию.
+Не происходит дублирования автоматизации одних и тех же сценариев. Так как разработчики о них в курсе, и при написании своих e2e тестов и юнит-тестов смогут предупредить тестировщика, об отсутствии необходимости автоматизировать определенные сценарии.
+Быстро решается проблема устаревших автотестов. Когда продукт быстро развивается, наличие доп.человека отвечающего за автоматизацию генерит для него много бессмысленной работы. Потому что пока он сегодня автоматизирует по прототипам какой-то новый набор тест-кейсов, дизайнер с продакт оунером могут принимать решение о том, что логика полностью будет другая. И получается, что на следующий день ему снова надо переделывать свои тесты. Только находясь всегда внутри команды, можно “держать руку на пульсе”  и понимать, какие тесты имеет смысл автоматизировать уже сейчас, а с какими имеет смысл повременить.</p>
+
+<h3 id="автоматизация-тестирования-без-программирования">Автоматизация тестирования без программирования</h3>
+
+<p>Akita BDD</p>
+
+<ul>
+<li><a href="https://github.com/alfa-laboratory/akita">https://github.com/alfa-laboratory/akita</a></li>
+<li><a href="https://github.com/alfa-laboratory/akita-testing-template">https://github.com/alfa-laboratory/akita-testing-template</a></li>
+</ul>
+
+<h2 id="а-не-пострадает-ли-качество-тестов">А не пострадает ли качество тестов?</h2>
+
+<p>Итак, если инновации исходят не от одного одинокого гения, а вместо этого - от командной работы, на что это похоже на практике? И в чем могут быть особенно полезны кросс-функциональные команды?
+Я расскажу вам историю, которая приключилась со мной. Когда я только пришла в Альфа-Банк, там уже был свой фреймворк для автоматизации тестирования. Он разрабатывался выделенной командой разработчиков автотестов, про которую я уже говорила. Разрабатывался на протяжении 2-3 лет.  Это был монструозный франкенштейн, научиться пользоваться которым даже бывалому разработчику было сложно. Соответственно, любые попытки научить тестировщика автоматизировать тесты с его помощью заканчивались провалом. А также попытки затащить этот инструмент в команды.</p>
+
+<p>Тогда мы решили пропилотивать разработку нового инструмента. Но разрабатывать его должна именно команда, а не человек/команда в отрыве от производства. По итогам одного проекта у нас появился прототип этого инструмента, который мы затащили еще в парочку новых команд. И по итогам реализации их продуктов у нас появился обросший прототип с большим количеством наработок, которые команды создавали сами и сами решали возникающие проблемы с похожим контекстом. Мы проанализировали то, что они сделали, и, выбрав лучшее - сделали библиотеку. То есть это был тот же прототип, только над которым немного поколдовал java-разработчик из одной тех команд. Он навел порядок и красоту в архитектуре приложения и улучшил качество кода самой библиотеки, чтобы это не было мусоркой.
+Сейчас эта библиотека используется более чем в 20-ти командах. И она сама развивается - тестировщики из команд постоянно контрибьютят и дополняют при необходимости новыми шагами.</p>
+
+<blockquote>
+<p>И все инновации, как правило, происходили именно  в контексте команды. И  наличие их разнообразного опыта в миксе способствовало лучшему пониманию и лучшим решениям.</p>
+</blockquote>
+
+<p>Возможно, вы спросите, а причем тут отказ от разработчиков автотестов, когда ты нам рассказывала сейчас про командную работу над автотестами. Дело в том, что ситуация с наличием разработчика автотестов и разработчиками внутри команды напоминают ситуацию, когда слишком много «поваров на кухне». То есть приводит к тому, что члены команды наступают друг на друга (или код друг друга). И в итоге мы получаем картинку, когда разработчики приложения перестают писать код автотестов, а значит, перестают знать контекст проблемы написания автотестов и то, как они могли бы их решить или не допустить при написании своей части кода.</p>
+
+<p>Еще одна причина для создания команд, которые пишут автотесты без привлечения выделенного человека для этой задачи: поскольку в команде люди работают вместе, то они  лучше представляют весь стек и контекст разрабатываемого приложения. А значит, и разрабатывать они его будут с учетом того, что им потом еще и автотесты надо будет разрабатывать. Рассмотрим на конкретном примере: когда наш фронт-разработчик начал пробовать писать автотесты, и познал боль написания xpath-запросов до различных ui-компонент на странице - то предложил в момент верстки страницы создавать уникальные css class name для удобного поиска элемента на странице. Таким образом мы смогли стабилизировать тесты и ускорить их написание за счет упрощения поиска этих элементов. А у фронт-разработчика просто появилось новое правило в работе  - которое не осложняло его рабочий процесс ни на йоту</p>
+
+<h2 id="выводы">Выводы:</h2>
+
+<p>Когда мы объединяем все в кроссфункциональную команду - мы включаем в нее все эти зависимости и не нуждаемся в какой-либо координации. Уровень управления становится намного меньше.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">Метки: </span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://travieso.me/tags/agiledays2018/">AgileDays2018</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/" data-tooltip="Добро пожаловать в мой блог!">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">След.</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2017/05/selenium-grid-on-demand/" data-tooltip="Selenium grid on-demand">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">Пред.</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Асеева-Нгуен Анастасия. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/" data-tooltip="Добро пожаловать в мой блог!">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">След.</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2017/05/selenium-grid-on-demand/" data-tooltip="Selenium grid on-demand">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">Пред.</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftravieso.me%2F2018%2F03%2F%25D0%25B2%25D0%25B0%25D0%25BC-%25D0%25BD%25D0%25B5-%25D0%25BD%25D1%2583%25D0%25B6%25D0%25BD%25D1%258B-%25D1%2580%25D0%25B0%25D0%25B7%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D1%2587%25D0%25B8%25D0%25BA%25D0%25B8-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25BE%25D0%25B2%2F">
+          <i class="fa fa-facebook-official"></i><span>Поделиться в Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Ftravieso.me%2F2018%2F03%2F%25D0%25B2%25D0%25B0%25D0%25BC-%25D0%25BD%25D0%25B5-%25D0%25BD%25D1%2583%25D0%25B6%25D0%25BD%25D1%258B-%25D1%2580%25D0%25B0%25D0%25B7%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D1%2587%25D0%25B8%25D0%25BA%25D0%25B8-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25BE%25D0%25B2%2F">
+          <i class="fa fa-twitter"></i><span>Поделиться в Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Ftravieso.me%2F2018%2F03%2F%25D0%25B2%25D0%25B0%25D0%25BC-%25D0%25BD%25D0%25B5-%25D0%25BD%25D1%2583%25D0%25B6%25D0%25BD%25D1%258B-%25D1%2580%25D0%25B0%25D0%25B7%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D1%2587%25D0%25B8%25D0%25BA%25D0%25B8-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25BE%25D0%25B2%2F">
+          <i class="fa fa-google-plus"></i><span>Поделиться в Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+    
+    <h4 id="about-card-name">Асеева-Нгуен Анастасия</h4>
+    
+      <div id="about-card-bio">Эксперт в автоматизации тестирования и тренер по инженерным практикам. Моя миссия - распространение культуры качества и DevOps.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        АО Альфа-Банк/Декретница
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Russia
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Поиск" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">Статей не найдено</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/">
+                <h3 class="media-heading">Добро пожаловать в мой блог!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Здесь будут опубликованы все мои выступления, презентации, доклады, лекции и статьи. Возможно я также буду публиковать какие-то личные заметки/размышления.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2018/03/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2/">
+                <h3 class="media-heading">Вам не нужны разработчики автотестов!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>В эпоху вселенского внедрения agile-методологий и devops-a уже никто не сомневается в том, что регрессия должна быть автоматизирована. Особенно, если в компании идет речь о Continuous Delivery. И тут все кидаются и начинают хантить разработчиков автотестов. Рынок становится перегретым.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2017/05/selenium-grid-on-demand/">
+                <h3 class="media-heading">Selenium grid on-demand</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Практический рассказ-детектив о том, как построить &ldquo;резиновый&rdquo; распределенный кластер для динамического запуска selenium grid в docker. А все для того, чтобы создать песочницу для прогона проектов с автотестами и ускорения их прохождения, и при этом не закупая дополнительные вычислительные мощности.
+Vimeo
+  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/">
+                <h3 class="media-heading">Rubber cluster for dynamic selenium grid</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Many of us have experienced such situations when projects involve +100500 automated tests and all these projects are subject to review more often than once in two weeks. And in the meantime, you don’t have an adequate amount of physical and monetary resources to build up a powerful farm.
+Fast delivery of value to the customer will be out of the question if regression testing of each modification takes the entire sprint!</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/11/devops-guide-for-awesome-qa/">
+                <h3 class="media-heading">DevOps guide for awesome QA</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">The practical story telling how Devops changed the culture of quality in the Bank. Recently Devops became mainstream topic. But only few people have a deep understanding how to apply it to the process of software quality assurance. Some believe that the Devops kills manual testing.
+I will talk about changes it makes to the role of QA engineers themself. The discussion main point is NOT about tools or technologies. It’s NOT about the “silver bullet” for your problems with the quality of products.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/">
+                <h3 class="media-heading">О том, как я съездила на QAFest2016</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Моя первая заметка для блога, которая увидела свет спустя 2 года. До этого все заметки записывала в everynote. Вот что с людьми делает декрет - руки наконец-то дошли до блога.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+                <h3 class="media-heading">Роль тестирования в Devops</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Практический доклад о том, как мы внедряли devops в банке, а конкретнее какую роль в этом процессе сыграло тестирование. В докладе рассмотрены основные проблемы, с которыми команда столкнулась при внедрении и способы их устранения. Продемонстрированы результаты, которых смогли достичь в течении полугода. Доклад содержит большое количество лайфхаков и обзоров инструментария, который использовался для достижения цели.
+Видео
+  Презентация
+ </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="Статей не найдено"
+         data-message-one="Найдена 1 статья"
+         data-message-other="Найдено статей: {n}">
+         7 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://travieso.me/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://travieso.me/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/travieso.me\/2018\/03\/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2\/';
+          
+            this.page.identifier = '\/2018\/03\/%D0%B2%D0%B0%D0%BC-%D0%BD%D0%B5-%D0%BD%D1%83%D0%B6%D0%BD%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'travieso-me';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
