@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Блог отчаянной QA домохозяйки</title>
-    <link>https://travieso.me/categories/</link>
+    <link>http://travieso.me/categories/</link>
     <description>Recent content in Categories on Блог отчаянной QA домохозяйки</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-Ru</language>
     <lastBuildDate>Thu, 22 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://travieso.me/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://travieso.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Article</title>
-      <link>https://travieso.me/categories/article/</link>
+      <link>http://travieso.me/categories/article/</link>
       <pubDate>Thu, 22 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/categories/article/</guid>
+      <guid>http://travieso.me/categories/article/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Presentations</title>
-      <link>https://travieso.me/categories/presentations/</link>
+      <link>http://travieso.me/categories/presentations/</link>
       <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/categories/presentations/</guid>
+      <guid>http://travieso.me/categories/presentations/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://travieso.me/categories/resume/</link>
+      <link>http://travieso.me/categories/resume/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/categories/resume/</guid>
+      <guid>http://travieso.me/categories/resume/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Talks</title>
-      <link>https://travieso.me/categories/talks/</link>
+      <link>http://travieso.me/categories/talks/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/categories/talks/</guid>
+      <guid>http://travieso.me/categories/talks/</guid>
       <description></description>
     </item>
     

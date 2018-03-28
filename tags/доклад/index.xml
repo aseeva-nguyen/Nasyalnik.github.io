@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Доклад on Блог отчаянной QA домохозяйки</title>
-    <link>https://travieso.me/tags/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4/</link>
+    <link>http://travieso.me/tags/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4/</link>
     <description>Recent content in Доклад on Блог отчаянной QA домохозяйки</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-Ru</language>
     <lastBuildDate>Fri, 26 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://travieso.me/tags/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://travieso.me/tags/%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Selenium grid on-demand</title>
-      <link>https://travieso.me/2017/05/selenium-grid-on-demand/</link>
+      <link>http://travieso.me/2017/05/selenium-grid-on-demand/</link>
       <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/2017/05/selenium-grid-on-demand/</guid>
+      <guid>http://travieso.me/2017/05/selenium-grid-on-demand/</guid>
       <description>Практический рассказ-детектив о том, как построить &amp;ldquo;резиновый&amp;rdquo; распределенный кластер для динамического запуска selenium grid в docker. А все для того, чтобы создать песочницу для прогона проектов с автотестами и ускорения их прохождения, и при этом не закупая дополнительные вычислительные мощности.
 Vimeo
   </description>
@@ -24,20 +24,20 @@ Vimeo
     
     <item>
       <title>Rubber cluster for dynamic selenium grid</title>
-      <link>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</link>
+      <link>http://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</link>
       <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</guid>
+      <guid>http://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</guid>
       <description>Many of us have experienced such situations when projects involve +100500 automated tests and all these projects are subject to review more often than once in two weeks. And in the meantime, you don’t have an adequate amount of physical and monetary resources to build up a powerful farm.
 Fast delivery of value to the customer will be out of the question if regression testing of each modification takes the entire sprint!</description>
     </item>
     
     <item>
       <title>DevOps guide for awesome QA</title>
-      <link>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</link>
+      <link>http://travieso.me/2016/11/devops-guide-for-awesome-qa/</link>
       <pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</guid>
+      <guid>http://travieso.me/2016/11/devops-guide-for-awesome-qa/</guid>
       <description>The practical story telling how Devops changed the culture of quality in the Bank. Recently Devops became mainstream topic. But only few people have a deep understanding how to apply it to the process of software quality assurance. Some believe that the Devops kills manual testing.
 I will talk about changes it makes to the role of QA engineers themself. The discussion main point is NOT about tools or technologies. It’s NOT about the “silver bullet” for your problems with the quality of products.</description>
     </item>
