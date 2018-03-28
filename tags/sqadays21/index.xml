@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sqadays21 on Блог отчаянной QA домохозяйки</title>
+    <link>https://travieso.me/tags/sqadays21/</link>
+    <description>Recent content in Sqadays21 on Блог отчаянной QA домохозяйки</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-Ru</language>
+    <lastBuildDate>Fri, 26 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://travieso.me/tags/sqadays21/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Selenium grid on-demand</title>
+      <link>https://travieso.me/2017/05/selenium-grid-on-demand/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/2017/05/selenium-grid-on-demand/</guid>
+      <description>Практический рассказ-детектив о том, как построить &amp;ldquo;резиновый&amp;rdquo; распределенный кластер для динамического запуска selenium grid в docker. А все для того, чтобы создать песочницу для прогона проектов с автотестами и ускорения их прохождения, и при этом не закупая дополнительные вычислительные мощности.
+Vimeo
+  </description>
+    </item>
+    
+  </channel>
+</rss>

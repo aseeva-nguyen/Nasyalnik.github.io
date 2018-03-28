@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on Блог отчаянной QA домохозяйки</title>
+    <link>https://travieso.me/categories/talks/</link>
+    <description>Recent content in Talks on Блог отчаянной QA домохозяйки</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-Ru</language>
+    <lastBuildDate>Sun, 16 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://travieso.me/categories/talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rubber cluster for dynamic selenium grid</title>
+      <link>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</guid>
+      <description>Many of us have experienced such situations when projects involve +100500 automated tests and all these projects are subject to review more often than once in two weeks. And in the meantime, you don’t have an adequate amount of physical and monetary resources to build up a powerful farm.
+Fast delivery of value to the customer will be out of the question if regression testing of each modification takes the entire sprint!</description>
+    </item>
+    
+    <item>
+      <title>Роль тестирования в Devops</title>
+      <link>https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/</guid>
+      <description>В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &amp;ldquo;серебрянной пули&amp;rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.</description>
+    </item>
+    
+  </channel>
+</rss>

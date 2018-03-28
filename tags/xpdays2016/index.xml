@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xpdays2016 on Блог отчаянной QA домохозяйки</title>
+    <link>https://travieso.me/tags/xpdays2016/</link>
+    <description>Recent content in Xpdays2016 on Блог отчаянной QA домохозяйки</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-Ru</language>
+    <lastBuildDate>Sat, 12 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://travieso.me/tags/xpdays2016/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevOps guide for awesome QA</title>
+      <link>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</link>
+      <pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</guid>
+      <description>The practical story telling how Devops changed the culture of quality in the Bank. Recently Devops became mainstream topic. But only few people have a deep understanding how to apply it to the process of software quality assurance. Some believe that the Devops kills manual testing.
+I will talk about changes it makes to the role of QA engineers themself. The discussion main point is NOT about tools or technologies. It’s NOT about the “silver bullet” for your problems with the quality of products.</description>
+    </item>
+    
+  </channel>
+</rss>

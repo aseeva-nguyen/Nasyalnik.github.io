@@ -5,58 +5,79 @@
     <link>https://travieso.me/</link>
     <description>Recent content on Блог отчаянной QA домохозяйки</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ru-RU</language>
-    <lastBuildDate>Tue, 20 Mar 2018 23:33:47 +0300</lastBuildDate>
+    <language>ru-Ru</language>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://travieso.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Обо мне</title>
-      <link>https://travieso.me/about/</link>
-      <pubDate>Tue, 20 Mar 2018 23:33:47 +0300</pubDate>
+      <title>Добро пожаловать в мой блог!</title>
+      <link>https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/about/</guid>
-      <description>Ведущий технический эксперт в автоматизации тестирования и тренер по инженерным практикам в Альфа-Банке.
-В QA-отрасли с 2012 года. Прошла все роли, начиная от manual QA до QA Lead.
-В ИТ с 2007 года. Успела поработать в разных областях, побывала даже программистом 1С и сис. админом. Без ума от консоли Linux :)
-За 4 года приняла участие в тестировании более двух десятков проектов. Участвовала в разработке двух фреймворков для автоматизации тестирования. Также занималась внедрением гибридной облачной инфраструктуры в Банке.</description>
+      <guid>https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/</guid>
+      <description>&lt;p&gt;Здесь будут опубликованы все мои выступления, презентации, доклады, лекции и статьи. Возможно я также буду публиковать какие-то личные заметки/размышления.
+&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Selenium grid on-demand</title>
-      <link>https://travieso.me/talks/selenium-grid-on-demand/</link>
-      <pubDate>Fri, 26 May 2017 01:52:17 +0300</pubDate>
+      <link>https://travieso.me/2017/05/selenium-grid-on-demand/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/talks/selenium-grid-on-demand/</guid>
-      <description>   </description>
+      <guid>https://travieso.me/2017/05/selenium-grid-on-demand/</guid>
+      <description>Практический рассказ-детектив о том, как построить &amp;ldquo;резиновый&amp;rdquo; распределенный кластер для динамического запуска selenium grid в docker. А все для того, чтобы создать песочницу для прогона проектов с автотестами и ускорения их прохождения, и при этом не закупая дополнительные вычислительные мощности.
+Vimeo
+  </description>
     </item>
     
     <item>
       <title>Rubber cluster for dynamic selenium grid</title>
-      <link>https://travieso.me/talks/rubber-cluster/</link>
-      <pubDate>Sun, 16 Apr 2017 01:51:00 +0300</pubDate>
+      <link>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/talks/rubber-cluster/</guid>
-      <description>   </description>
+      <guid>https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/</guid>
+      <description>Many of us have experienced such situations when projects involve +100500 automated tests and all these projects are subject to review more often than once in two weeks. And in the meantime, you don’t have an adequate amount of physical and monetary resources to build up a powerful farm.
+Fast delivery of value to the customer will be out of the question if regression testing of each modification takes the entire sprint!</description>
     </item>
     
     <item>
       <title>DevOps guide for awesome QA</title>
-      <link>https://travieso.me/talks/devops-guide/</link>
-      <pubDate>Sat, 12 Nov 2016 01:48:35 +0300</pubDate>
+      <link>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</link>
+      <pubDate>Sat, 12 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/talks/devops-guide/</guid>
-      <description>      </description>
+      <guid>https://travieso.me/2016/11/devops-guide-for-awesome-qa/</guid>
+      <description>The practical story telling how Devops changed the culture of quality in the Bank. Recently Devops became mainstream topic. But only few people have a deep understanding how to apply it to the process of software quality assurance. Some believe that the Devops kills manual testing.
+I will talk about changes it makes to the role of QA engineers themself. The discussion main point is NOT about tools or technologies. It’s NOT about the “silver bullet” for your problems with the quality of products.</description>
+    </item>
+    
+    <item>
+      <title>О том, как я съездила на QAFest2016</title>
+      <link>https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/</link>
+      <pubDate>Wed, 05 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/</guid>
+      <description>&lt;p&gt;Моя первая заметка для блога, которая увидела свет спустя 2 года. До этого все заметки записывала в everynote. Вот что с людьми делает декрет - руки наконец-то дошли до блога.
+&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Роль тестирования в Devops</title>
-      <link>https://travieso.me/talks/testing-in-devops/</link>
-      <pubDate>Sat, 01 Oct 2016 01:51:46 +0300</pubDate>
+      <link>https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://travieso.me/talks/testing-in-devops/</guid>
-      <description>   </description>
+      <guid>https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/</guid>
+      <description>В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &amp;ldquo;серебрянной пули&amp;rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://travieso.me/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://travieso.me/1/01/</guid>
+      <description></description>
     </item>
     
   </channel>

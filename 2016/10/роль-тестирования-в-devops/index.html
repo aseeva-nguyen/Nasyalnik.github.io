@@ -1,0 +1,714 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="ru-Ru">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.37.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Роль тестирования в Devops</title>
+    <meta name="author" content="Асеева-Нгуен Анастасия">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://travieso.me/favicon.png">
+    
+
+    
+    <meta name="description" content="В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &ldquo;серебрянной пули&rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.">
+    <meta property="og:description" content="В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &ldquo;серебрянной пули&rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Роль тестирования в Devops">
+    <meta property="og:url" content="/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+    <meta property="og:site_name" content="Блог отчаянной QA домохозяйки">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Блог отчаянной QA домохозяйки">
+    <meta name="twitter:description" content="В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &ldquo;серебрянной пули&rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.">
+    
+      <meta name="twitter:creator" content="@Travieso_nastya">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg">
+    
+
+    
+      <meta property="og:image" content="//farm1.staticflickr.com/864/39260718250_6572e2c929_n.jpg">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://travieso.me/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-116205401-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://travieso.me/">Блог отчаянной QA домохозяйки</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://travieso.me/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://travieso.me/#about">
+          <img class="sidebar-profile-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+        </a>
+        <h4 class="sidebar-profile-name">Асеева-Нгуен Анастасия</h4>
+        
+          <h5 class="sidebar-profile-bio">Эксперт в автоматизации тестирования и тренер по инженерным практикам. Моя миссия - распространение культуры качества и DevOps.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Главная</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Разделы</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Метки</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Архив</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Об авторе</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/Nasyalnik" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://travieso.me/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Роль тестирования в Devops
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-10-01T00:00:00Z">
+        
+  Октябрь 1, 2016
+
+      </time>
+    
+    
+  
+  
+    <span>в</span>
+    
+      <a class="category-link" href="https://travieso.me/categories/talks">Talks</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика.
+Доклад не содержит набора инструментов и технологий, которые помогают делать Devops.
+А также он не содержит &ldquo;серебрянной пули&rdquo;, которая решила бы ваши проблемы с качеством продукта.
+Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов. Данный подход также ускорил разработку и поставку бизнес ценности до клиента и сделал весь процесс более прозрачным и предсказуемым.</p>
+
+<p><strong>Видео</strong></p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/-UeGFGx6d9E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0" title="YouTube Video"></iframe>
+ </div>
+
+
+<p><strong>Презентация</strong></p>
+
+<script async class="speakerdeck-embed" data-id="7fc5f69017f4473ea72326ce312ece1d" data-ratio="1.77725118483412" src="//speakerdeck.com/assets/embed.js"></script>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">Метки: </span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://travieso.me/tags/%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE/">видео</a>
+
+  <a class="tag tag--primary tag--small" href="https://travieso.me/tags/%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F/">презентация</a>
+
+  <a class="tag tag--primary tag--small" href="https://travieso.me/tags/qafest2016/">QAFest2016</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/" data-tooltip="О том, как я съездила на QAFest2016">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">След.</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/1/01/" data-tooltip="">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">Пред.</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Асеева-Нгуен Анастасия. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/" data-tooltip="О том, как я съездила на QAFest2016">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">След.</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://travieso.me/1/01/" data-tooltip="">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">Пред.</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftravieso.me%2F2016%2F10%2F%25D1%2580%25D0%25BE%25D0%25BB%25D1%258C-%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F-%25D0%25B2-devops%2F">
+          <i class="fa fa-facebook-official"></i><span>Поделиться в Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Ftravieso.me%2F2016%2F10%2F%25D1%2580%25D0%25BE%25D0%25BB%25D1%258C-%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F-%25D0%25B2-devops%2F">
+          <i class="fa fa-twitter"></i><span>Поделиться в Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Ftravieso.me%2F2016%2F10%2F%25D1%2580%25D0%25BE%25D0%25BB%25D1%258C-%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D1%258F-%25D0%25B2-devops%2F">
+          <i class="fa fa-google-plus"></i><span>Поделиться в Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://pbs.twimg.com/profile_images/787432519461470213/yby1-6XL_400x400.jpg" alt="Фотография автора" />
+    
+    <h4 id="about-card-name">Асеева-Нгуен Анастасия</h4>
+    
+      <div id="about-card-bio">Эксперт в автоматизации тестирования и тренер по инженерным практикам. Моя миссия - распространение культуры качества и DevOps.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        АО Альфа-Банк/Декретница
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Russia
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Поиск" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">Статей не найдено</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2018/03/%D0%B4%D0%BE%D0%B1%D1%80%D0%BE-%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BC%D0%BE%D0%B9-%D0%B1%D0%BB%D0%BE%D0%B3/">
+                <h3 class="media-heading">Добро пожаловать в мой блог!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Здесь будут опубликованы все мои выступления, презентации, доклады, лекции и статьи. Возможно я также буду публиковать какие-то личные заметки/размышления.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2017/05/selenium-grid-on-demand/">
+                <h3 class="media-heading">Selenium grid on-demand</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Практический рассказ-детектив о том, как построить &ldquo;резиновый&rdquo; распределенный кластер для динамического запуска selenium grid в docker. А все для того, чтобы создать песочницу для прогона проектов с автотестами и ускорения их прохождения, и при этом не закупая дополнительные вычислительные мощности.
+Vimeo
+  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2017/04/rubber-cluster-for-dynamic-selenium-grid/">
+                <h3 class="media-heading">Rubber cluster for dynamic selenium grid</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Many of us have experienced such situations when projects involve +100500 automated tests and all these projects are subject to review more often than once in two weeks. And in the meantime, you don’t have an adequate amount of physical and monetary resources to build up a powerful farm.
+Fast delivery of value to the customer will be out of the question if regression testing of each modification takes the entire sprint!</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/11/devops-guide-for-awesome-qa/">
+                <h3 class="media-heading">DevOps guide for awesome QA</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">The practical story telling how Devops changed the culture of quality in the Bank. Recently Devops became mainstream topic. But only few people have a deep understanding how to apply it to the process of software quality assurance. Some believe that the Devops kills manual testing.
+I will talk about changes it makes to the role of QA engineers themself. The discussion main point is NOT about tools or technologies. It’s NOT about the “silver bullet” for your problems with the quality of products.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/10/%D0%BE-%D1%82%D0%BE%D0%BC-%D0%BA%D0%B0%D0%BA-%D1%8F-%D1%81%D1%8A%D0%B5%D0%B7%D0%B4%D0%B8%D0%BB%D0%B0-%D0%BD%D0%B0-qafest2016/">
+                <h3 class="media-heading">О том, как я съездила на QAFest2016</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Моя первая заметка для блога, которая увидела свет спустя 2 года. До этого все заметки записывала в everynote. Вот что с людьми делает декрет - руки наконец-то дошли до блога.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/2016/10/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops/">
+                <h3 class="media-heading">Роль тестирования в Devops</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">В последнее время Devops стал попсой. Но мало кто обладает глубоким пониманием, как изменяется тестирование при его внедрении. Некоторые считают, что Devops убивает роль ручного тестировщика. Но я в свое докладе рассказала о том, как он меняет саму роль тестировщика. Доклад не содержит набора инструментов и технологий, которые помогают делать Devops. А также он не содержит &ldquo;серебрянной пули&rdquo;, которая решила бы ваши проблемы с качеством продукта. Зато в докладе я рассказала о комплексном подходе, который мы применили для обеспечения и контроля качества, который позволил нам существенно сократить расходы на поиск и исправление дефектов.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://travieso.me/1/01/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="Статей не найдено"
+         data-message-one="Найдена 1 статья"
+         data-message-other="Найдено статей: {n}">
+         7 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://travieso.me/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://travieso.me/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/travieso.me\/2016\/10\/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops\/';
+          
+            this.page.identifier = '\/2016\/10\/%D1%80%D0%BE%D0%BB%D1%8C-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-devops\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'travieso-me';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
